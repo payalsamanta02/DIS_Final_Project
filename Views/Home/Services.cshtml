@@ -1,0 +1,174 @@
+﻿@{
+    ViewBag.Title = "Services";
+}
+<link rel="stylesheet" href="/css/site.css">
+<script src="/js/site.js"></script>
+
+<!-- Add a navbar at the top -->
+<div class="navbar">
+    <a href="@Url.Action("Index", "Home")">Home</a>
+    <a href="@Url.Action("Services", "Home")">Services</a>
+    <a href="@Url.Action("Details", "Home")">Details</a>
+    <a href="@Url.Action("AboutUs", "Home")">AboutUs</a>
+</div>
+
+
+<!-- Main content inside a container -->
+<div class="container">
+    <h1>Our Services</h1>
+    <p>Explore our wide range of telecom services tailored to meet your needs.</p>
+
+    <!-- Service Card 1: High-Speed Internet -->
+    <div class="service-card">
+        <h3>High-Speed Internet</h3>
+        <p>Experience blazing fast internet speeds for all your online needs.</p>
+        <ul>
+            <li>Up to 1 Gbps download speed</li>
+            <li>Unlimited data usage</li>
+            <li>Free modem and router</li>
+            <li>24/7 customer support</li>
+        </ul>
+        <p class="price">$49.99/month</p>
+        <a href="#">Learn More</a>
+    </div>
+
+    <!-- Service Card 2: Mobile Phone Plans -->
+    <div class="service-card">
+        <h3>Mobile Phone Plans</h3>
+        <p>Stay connected with our flexible mobile phone plans.</p>
+        <ul>
+            <li>Unlimited talk and text</li>
+            <li>5G network coverage</li>
+            <li>Family plans available</li>
+            <li>International calling options</li>
+        </ul>
+        <p class="price">$29.99/month</p>
+        <a href="#">Learn More</a>
+    </div>
+
+    <!-- Service Card 3: TV and Streaming Packages -->
+    <div class="service-card">
+        <h3>TV and Streaming Packages</h3>
+        <p>Enjoy a variety of entertainment options with our TV and streaming packages.</p>
+        <ul>
+            <li>Access to 200+ channels</li>
+            <li>On-demand movies and shows</li>
+            <li>Free streaming apps</li>
+            <li>4K UHD quality available</li>
+        </ul>
+        <p class="price">$39.99/month</p>
+        <a href="#">Learn More</a>
+    </div>
+
+    <!-- Service Card 4: Business Communication Solutions -->
+    <div class="service-card">
+        <h3>Business Communication Solutions</h3>
+        <p>Empower your business with our advanced communication solutions.</p>
+        <ul>
+            <li>Dedicated business lines</li>
+            <li>VoIP phone systems</li>
+            <li>Conference calling</li>
+            <li>Custom communication plans</li>
+        </ul>
+        <p class="price">From $59.99/month</p>
+        <a href="#">Learn More</a>
+    </div>
+</div>
+
+<!-- CSS styles for the page -->
+<style>
+    /* General styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f8ff; /* Light blue background color */
+        color: #333;
+        text-align: center;
+    }
+
+    /* Navbar styles */
+    .navbar {
+        width: 100%;
+        background-color: #ff7f50; /* Coral color */
+        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+    /* Container styles */
+    .container {
+        max-width: 800px;
+        margin: 100px auto;
+        padding: 20px;
+        background-color: #fff0f5; /* Lavender blush background color */
+        border-radius: 12px; /* Rounded corners */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Section styles */
+    h1, h2, h3 {
+        color: #4682b4; /* Steel blue color */
+    }
+
+    p, ul, li {
+        color: #4b0082; /* Indigo color */
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    a {
+        color: #ff4500; /* Orange-red color */
+        text-decoration: none;
+    }
+
+        a:hover {
+            text-decoration: underline; /* Underline links on hover */
+        }
+
+    /* Service card styles */
+    .service-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+        .service-card h3 {
+            color: #4682b4;
+        }
+
+        .service-card p {
+            color: #4b0082;
+            line-height: 1.5;
+        }
+
+        .service-card ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .service-card li {
+            margin-bottom: 5px;
+            color: #696969;
+        }
+
+        .service-card .price {
+            color: #ff4500;
+            font-weight: bold;
+        }
+
+    
+</style>
