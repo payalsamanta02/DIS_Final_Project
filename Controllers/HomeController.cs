@@ -14,7 +14,7 @@ namespace pppppppppppppp.Controllers
         }
 
         // Action method for the services page
-        public ActionResult Services()
+        public ActionResult Appointments()
         {
             // Return the Services view
             return View();

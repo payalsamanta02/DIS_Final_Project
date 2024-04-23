@@ -1,92 +1,55 @@
 ﻿@{
-    ViewBag.Title = "Welcome to Our Telecom Website";
+    ViewBag.Title = "MoonMax";
 }
-<link rel="stylesheet" href="/css/site.css">
-<script src="/js/site.js"></script>
-<!-- Main content -->
-<div class="container">
-    <h1>Welcome to Our Telecom Website</h1>
-    <p>Discover the latest in telecommunications technology and services. Our team is dedicated to providing the best solutions for your communication needs.</p>
+<link rel="stylesheet" href="@Url.Content("~/css/site.css")">
+@{
+    Layout = "_Layout.cshtml";
+}
+<!-- Add CSS links -->
+<link rel="stylesheet" href="@Url.Content("~/css/site.css")">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="@Url.Content("~/css/bootstrap.min.css")">
+<link rel="stylesheet" href="@Url.Content("~/css/fontawesome-all.min.css")">
+<link rel="stylesheet" href="@Url.Content("~/css/aos.min.css")">
+<link rel="stylesheet" href="@Url.Content("~/css/swiper.css")">
+<link rel="stylesheet" href="@Url.Content("~/css/style.css")">
 
-    <!-- Explore Our Services section -->
-    <div class="section">
-        <h3>Explore Our Services</h3>
-        <p>We offer a wide range of services tailored to your needs, including:</p>
-        <ul>
-            <li>High-speed internet</li>
-            <li>Mobile and landline phone services</li>
-            <li>TV and streaming packages</li>
-            <li>Business communication solutions</li>
-        </ul>
-    </div>
 
-    <!-- Why Choose Us? section -->
-    <div class="section">
-        <h3>Why Choose Us?</h3>
-        <p>Our commitment to quality and customer satisfaction makes us the go-to choice for telecom services. We offer:</p>
-        <ul>
-            <li>Reliable and efficient service</li>
-            <li>Competitive pricing</li>
-            <li>24/7 customer support</li>
-            <li>Customizable packages</li>
-        </ul>
-    </div>
-
-    <!-- Customer Stories section -->
-    <div class="section">
-        <h3>Customer Stories</h3>
-
-        <!-- Collapsible Story 1 -->
-        <button class="collapsible">Story 1: Happy Customer</button>
-        <div class="content">
-            <p>"I switched to this telecom provider and couldn't be happier. Their customer support is excellent and their services are top-notch!" - Jane Doe</p>
-        </div>
-
-        <!-- Collapsible Story 2 -->
-        <button class="collapsible">Story 2: Business Solutions</button>
-        <div class="content">
-            <p>"Our business has seen significant improvements in communication since partnering with this provider. Highly recommended!" - John Smith</p>
-        </div>
-
-        <!-- Collapsible Story 3 -->
-        <button class="collapsible">Story 3: Smooth Streaming</button>
-        <div class="content">
-            <p>"Their TV and streaming packages are fantastic. The quality and variety of channels available are amazing!" - Emily Green</p>
-        </div>
-    </div>
-
-    <p>Contact us today to learn more about our offerings and how we can serve you better. <a href="@Url.Action("Contact", "Home")">Get in touch</a>.</p>
-</div>
-
-<!-- JavaScript for collapsible stories -->
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var collapsibles = document.querySelectorAll('.collapsible');
-        collapsibles.forEach(function (collapsible) {
-            collapsible.addEventListener('click', function () {
-                var content = this.nextElementSibling;
-                content.style.display = content.style.display === 'block' ? 'none' : 'block';
-            });
-        });
-    });
-</script>
-
-<!-- CSS styles for the page -->
+<!-- Favicon -->
+<link rel="icon" href="@Url.Content("~/images/favicon.png")">
 <style>
-    /* General styles */
+    /* Additional CSS rule for the details page */
+    /* .g {
+        
+     background-image: url("@Url.Content("~/images/home.jpg")"); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    } */
+
+    /* Other existing styles */
+   
+
+    
+
     body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f0f8ff; /* Light blue background color */
+        background-image: url("@Url.Content("~/images/home.jpg")");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-color: #d3d3d3; /* Light grey background color */
         color: #333;
-        text-align: center;
+        text-align: left;
     }
 
     /* Navbar styles */
     .navbar {
         width: 100%;
-        background-color: #ff7f50; /* Coral color */
+        background-color: black; /* Changed background color to black */
         padding: 10px 0;
         position: fixed;
         top: 0;
@@ -102,70 +65,77 @@
             font-size: 18px;
         }
 
-    /* Container styles */
-    .container {
-        max-width: 600px;
-        margin: 100px auto;
-        padding: 20px;
-        background-color: #fff0f5; /* Lavender blush background color */
-        border-radius: 12px; /* Rounded corners */
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    }
 
-    /* Section styles */
-    .section {
-        margin: 20px 0; /* Space between sections */
-    }
-
-    h1, h2, h3 {
-        color: #4682b4; /* Steel blue color */
-    }
-
-    p, ul, li {
-        color: #4b0082; /* Indigo color */
-        font-size: 18px;
-        line-height: 1.6;
-    }
-
-    a {
-        color: #ff4500; /* Orange-red color */
-        text-decoration: none;
-    }
-
-        a:hover {
-            text-decoration: underline; /* Underline links on hover */
-        }
-
-    /* Collapsible story styles */
-    .collapsible {
-        background-color: #f8f8f8;
-        color: #333;
-        cursor: pointer;
-        padding: 10px;
-        border-radius: 8px;
-        border: 1px solid #ddd;
-        text-align: left;
-        font-size: 18px;
-        margin-bottom: 10px;
-        width: 100%;
-    }
-
-    .content {
-        display: none;
-        padding: 10px;
-        background-color: #fffaf0; /* Floral white background */
-        border-radius: 8px;
-        border: 1px solid #ddd;
-    }
+    
 </style>
 
 
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <!-- Home Section -->
+
+    <section class="home py-5 d-flex align-items-center" id="header">
+        <div class="container text-light py-5" data-aos="fade-right">
+            <h1 class="headline">Best <span class="home_text">Broadband</span><br>Internet Plans For You</h1>
+            <p class="para para-light py-3">
+                Step into the future of unlimited broadband plans with MoonMax fibernet technology.
+                MoonMax allows you to enjoy the fastest connection with the speed of up to 1 Gbps, which means once you connect, you will get faster downloads and less buffering.
+                At MoonMax, exceptional service is not just a promise, it is our standard.
+            </p>
+            <div class="d-flex align-items-center">
+                <p class="p-2"><i class="fas fa-laptop-house fa-lg"></i></p>
+                <p>Bytes Of Joy -Where Every Megabit Brings A Smile.</p>
+            </div>
+            <div class="d-flex align-items-center">
+                <p class="p-2"><i class="fas fa-wifi fa-lg"></i></p>
+                <p>Experience Broadband Like Never Before.</p>
+            </div>
+            <div class="my-3">
+                <a class="btn" href="@Url.Action("Appointments", "Home")">Make an Appointment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Information -->
+    <section class="information">
+        <div class="container-fluid">
+            <div class="row text-light">
+                <div class="col-lg-4 text-center p-5" data-aos="zoom-in">
+                    <i class="fas fa-tachometer-alt fa-3x p-2"></i>
+                    <h4 class="py-3">Download 1 GBPS</h4>
+                    <p class="para-light">
+                        Experience lightning-speed connectivity with our 1 Gbps internet plan. Perfect for streaming, gaming, and large downloads
+                    </p>
+                </div>
+                <div class="col-lg-4 text-center p-5" data-aos="zoom-in">
+                    <i class="fas fa-clock fa-3x p-2"></i>
+                    <h4 class="py-3">99% Internet Uptime</h4>
+                    <p class="para-light">We guarantee 99% uptime to ensure you're always connected when it matters most. Our resilient network is designed to keep you online withoutÂ interruption </p>
+                </div>
+                <div class="col-lg-4 text-center p-5 text-dark" data-aos="zoom-in">
+                    <i class="fas fa-headset fa-3x p-2"></i>
+                    <h4 class="py-3">24/7 Support</h4>
+                    <p class="para-light">Our dedicated support team is available 24/7 to assist you with any queries or issues. We're here to help wheneverÂ youÂ needÂ us</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="@Url.Content("~/images/up-arrow.png")" alt="alternative">
+    </button>
 
+   
 
-
-
-
-
-
+    <!-- Scripts -->
+    <script src="@Url.Content("~/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/js/purecounter.min.js")"></script>
+    <script src="@Url.Content("~/js/swiper.min.js")"></script>
+    <script src="@Url.Content("~/js/aos.js")"></script>
+    <script src="@Url.Content("~/js/script.js")"></script>
+</body>
+</html>

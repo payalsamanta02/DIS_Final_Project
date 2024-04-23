@@ -29,3 +29,4 @@ C:\Users\Payal\source\repos\pppppppppppppp\obj\Debug\net8.0\refint\ppppppppppppp
 C:\Users\Payal\source\repos\pppppppppppppp\obj\Debug\net8.0\pppppppppppppp.pdb
 C:\Users\Payal\source\repos\pppppppppppppp\obj\Debug\net8.0\pppppppppppppp.genruntimeconfig.cache
 C:\Users\Payal\source\repos\pppppppppppppp\obj\Debug\net8.0\ref\pppppppppppppp.dll
+C:\Users\Payal\source\repos\pppppppppppppp\obj\Debug\net8.0\scopedcss\Views\Home\_Layout.cshtml.rz.scp.css

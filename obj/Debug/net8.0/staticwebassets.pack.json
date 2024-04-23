@@ -13,6 +13,22 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Payal\\source\\repos\\pppppppppppppp\\wwwroot\\images\\Author1.jpeg",
+      "PackagePath": "staticwebassets\\images\\Author1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Payal\\source\\repos\\pppppppppppppp\\wwwroot\\images\\author2.jpg",
+      "PackagePath": "staticwebassets\\images\\author2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Payal\\source\\repos\\pppppppppppppp\\wwwroot\\images\\author3.jpg",
+      "PackagePath": "staticwebassets\\images\\author3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Payal\\source\\repos\\pppppppppppppp\\wwwroot\\images\\data_modelERD.jpeg",
+      "PackagePath": "staticwebassets\\images\\data_modelERD.jpeg"
+    },
+    {
       "Id": "C:\\Users\\Payal\\source\\repos\\pppppppppppppp\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

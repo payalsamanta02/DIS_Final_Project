@@ -1,120 +1,232 @@
 ﻿@{
     ViewBag.Title = "AboutUs";
 }
-<link rel="stylesheet" href="/css/site.css">
-<script src="/js/site.js"></script>
+<link rel="stylesheet" href="@Url.Content("~/css/site.css")">
 
-<!-- Add a navbar at the top -->
-<div class="navbar">
-    <a href="@Url.Action("Index", "Home")">Home</a>
-    <a href="@Url.Action("Services", "Home")">Services</a>
-    <a href="@Url.Action("Details", "Home")">Details</a>
-    <a href="@Url.Action("AboutUs", "Home")">AboutUs</a>
-</div>
+@{
+    Layout = "_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- Main content inside a container -->
-<div class="container">
-    <h1>About Us</h1>
-    <p>Meet our team of authors and their expertise:</p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title | Telecom Website</title>
 
-    <!-- Author Section -->
-    <div class="author-section">
-        <!-- Author 1 -->
-        <div class="author-card">
-            <img src="@Url.Content("~/images/author1.jpg")" alt="Author 1">
-            <h3>Author 1</h3>
-            <p>Author 1 is an expert in telecommunications and has been with our company for over 10 years. They specialize in mobile networks and customer relations.</p>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WXxsY4c3S9Ix1opmgXbyM2ZVYqJqYS7c3Nj0P3e57IN1OC8oe7zo8ry5H8Mq9zEZ" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Your description">
+    <meta name="author" content="Your name">
+
+    <!-- OG Meta Tags -->
+    <meta property="og:site_name" content="" />
+    <meta property="og:site" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" href="@Url.Content("~/assets/images/favicon.png")">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="@Url.Content("~/css/bootstrap.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/css/fontawesome-all.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/css/aos.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/css/swiper.css")">
+    <link rel="stylesheet" href="@Url.Content("~/css/style.css")">
+
+    <!-- Webpage Title -->
+    <title>MoonMax - Broadband Company</title>
+
+
+
+    <style>
+        /* Add a CSS rule for the GitHub link class */
+        .github-link {
+            color: blue; /* Set the link color to black */
+            text-decoration: none; /* Optional: remove underline from the link */
+        }
+
+        /* Author section styles */
+        .author-section {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        /* Author card styles */
+        .author-card {
+            width: 22%; /* Each author card takes about a quarter of the width */
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+            /* Author image styles */
+            .author-card img {
+                width: 100%;
+                border-radius: 8px;
+            }
+
+
+
+
+        /* Other existing styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d3d3d3; /* Light grey background color */
+            color: #333;
+            text-align: left;
+        }
+        /* Navbar styles */
+        .navbar {
+            width: 100%;
+            background-color: black; /* Changed background color to black */
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+            .navbar a {
+                color: white;
+                text-decoration: none;
+                margin: 0 20px;
+                font-weight: bold;
+                font-size: 18px;
+            }
+
+
+        /* Styles for the data model container */
+        .data-model-container {
+            /* Use fixed positioning to keep the image at the bottom of the page */
+            /* Place the container at the bottom of the page */
+            /* Center the container horizontally */
+            /* Translate the container to center it */
+            width: auto; /* Set the width to auto to allow the image to maintain its original size */
+            padding: 10px; /* Optional: Add padding around the image */
+        }
+
+        /* Styles for the data model image */
+        .data-model-img {
+            width: auto; /* Use auto width to preserve the original aspect ratio */
+            height: auto; /* Use auto height to preserve the original aspect ratio */
+            max-width: 100%; /* Optional: Limit the image width to 100% of the container */
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand logo-text" href="@Url.Action("Index", "Home")">MoonMax</a>
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="@Url.Action("Index", "Home")">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Appointments", "Home")">Appointments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="@Url.Action("Details", "Home")">Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("AboutUs", "Home")">About Us</a>
+                    </li>
+                </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+    <main style="text-align: center;">
+    <!-- Main content -->
+    <div class="container">
+        <p>  .</p>
+        <p>  .</p>
+        <h1>About Us</h1>
+        <h2>Meet Our Team Members:</h2>
+
+        <!-- Author Section -->
+        <div class="author-section">
+            <!-- Author 1 -->
+            <div class="author-card">
+                <img src="@Url.Content("~/images/Author1.jpeg")" alt="Author 1">
+                <h3>Payal Samanta </h3>
+                <p>Payal has been central to the enhancement of our website, particularly in the development of the details and home pages where her expertise in styling and background imagery has shone. Her skill in arranging icons and crafting innovative layout designs has not only improved the visual appeal but also the overall user experience of the platform. Her contributions have transformed the aesthetics of our site, making it more engaging and visually coherent for users. Through her adept handling of graphical elements and keen eye for design harmony, Payal has significantly elevated the look and feel of our online presence. Her ability to blend functionality with style has set a new standard for how we approach website design.</p>
+            </div>
+
+            <!-- Author 2 -->
+            <div class="author-card">
+                <img src="@Url.Content("~/images/author2.jpg")" alt="Author 2">
+                <h3>Neha Satpute </h3>
+                <p>Neha played a crucial role in developing the Entity Relationship Diagram (ERD) and leading team management. She provided essential insights for the 'About Us' page, creating compelling content and engaging taglines that attract customer interest. Her excellent coordination skills were evident in her flawless scheduling of calls and meetings. Additionally, Neha's attention to detail, including perfect photo pixelation and seamless link integration, enhanced the 'About Us' page, aligning it closely with our brand's identity.</p>
+            </div>
+
+            <!-- Author 3 -->
+            <div class="author-card">
+                <img src="@Url.Content("~/images/author3.jpg")" alt="Author 3">
+                <h3>Aakesh Kumar Murala </h3>
+                <p>Aakesh has significantly enhanced the appointments page by creating a realistic real-time appointment form that effectively displays a tabular overview of bookings. He skillfully optimized the placement of bottom icons ensuring they contribute to the page’s functionality and aesthetic appeal. His attention to maintaining styling coherence throughout the page has resulted in a visually seamless user experience. Furthermore, Aakesh contributions have greatly improved the overall functionality of the page raising it to an exceptional standard. His work not only meets but exceeds user expectations in terms of efficiency and design.</p>
+            </div>
+
+
         </div>
 
-        <!-- Author 2 -->
-        <div class="author-card">
-            <img src="@Url.Content("~/images/author2.jpg")" alt="Author 2">
-            <h3>Author 2</h3>
-            <p>Author 2 is our lead technical writer and specializes in high-speed internet and advanced networking solutions. They are a valuable asset to our team.</p>
-        </div>
-
-        <!-- Author 3 -->
-        <div class="author-card">
-            <img src="@Url.Content("~/images/author3.jpg")" alt="Author 3">
-            <h3>Author 3</h3>
-            <p>Author 3 is an experienced professional in streaming and TV packages. They provide insightful recommendations and exceptional customer support.</p>
-        </div>
-
-        <!-- Author 4 -->
-        <div class="author-card">
-            <img src="@Url.Content("~/images/author4.jpg")" alt="Author 4">
-            <h3>Author 4</h3>
-            <p>Author 4 is our expert in business communication solutions. They help our clients improve productivity with customized plans and cutting-edge technology.</p>
-        </div>
     </div>
-</div>
 
-@* <!-- CSS styles for the page -->
-<style>
-    /* General styles */
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f0f8ff; /* Light blue background color */
-        color: #333;
-        text-align: center;
-    }
+    <!-- Add this new div at the bottom of your HTML file -->
+    <h3> Data Model</h3>
+    <div class="data-model-container">
+        <img src="@Url.Content("~/images/data_modelERD.jpeg")" alt="Data Model" class="data-model-img">
+    </div>
 
-    /* Navbar styles */
-    .navbar {
-        width: 100%;
-        background-color: #ff7f50; /* Coral color */
-        padding: 10px 0;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-    }
+    <!-- Add GitHub link at the end of the HTML file -->
+    <div class="container">
+        <footer>
+            <p><strong>View the project on <a href="https://github.com/payalsamanta02/Assignment_LookAndFeel" target="_blank">GitHub</a></strong></p>
+        </footer>
+    </div>
 
-    /* Navbar link styles */
-    .navbar a {
-        color: white;
-        text-decoration: none;
-        margin: 0 20px;
-        font-weight: bold;
-        font-size: 18px;
-    }
+        </main>
 
-    /* Container styles */
-    .container {
-        max-width: 800px;
-        margin: 100px auto;
-        padding: 20px;
-        background-color: #fff0f5; /* Lavender blush background color */
-        border-radius: 12px; /* Rounded corners */
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    }
+    <!-- Scripts -->
+    <!-- Custom Scripts -->
+    <script src="@Url.Content("~/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/js/purecounter.min.js")"></script>
+    <script src="@Url.Content("~/js/swiper.min.js")"></script>
+    <script src="@Url.Content("~/js/aos.js")"></script>
+    <script src="@Url.Content("~/js/script.js")"></script>
 
-    /* Author section styles */
-    .author-section {
-        display: flex;
-        justify-content: space-around;
-        margin: 20px 0;
-        text-align: left;
-    }
+</body>
 
-    /* Author card styles */
-    .author-card {
-        width: 22%; /* Each author card takes about a quarter of the width */
-        padding: 10px;
-        background-color: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
 
-    /* Author image styles */
-    .author-card img {
-        width: 100%;
-        border-radius: 8px;
-    }
 
-    /* Responsive styling */
 
-</style>
- *@
+
+
+</html>

@@ -1,0 +1,567 @@
+﻿@{
+    ViewBag.Title = "Services";
+}
+<link rel="stylesheet" href="@Url.Content("~/css/site.css")">
+
+@{
+    Layout = "_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title | Telecom Website</title>
+
+    <!-- Importing Google Fonts and CSS styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="@Url.Content("~/css/bootstrap.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/css/fontawesome-all.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/css/aos.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/css/swiper.css")">
+    <link rel="stylesheet" href="@Url.Content("~/css/style.css")">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Meta Tags -->
+    <meta name="description" content="Explore our range of services tailored to meet your needs">
+    <meta name="author" content="Telecom Company">
+    <meta property="og:site_name" content="Telecom Company" />
+    <meta property="og:site" content="https://www.telecomcompany.com/" />
+    <meta property="og:title" content="@ViewBag.Title | Telecom Company" />
+    <meta property="og:description" content="Explore our range of services tailored to meet your needs" />
+    <meta property="og:image" content="https://www.telecomcompany.com/images/services.jpg" />
+    <meta property="og:url" content="https://www.telecomcompany.com/services" />
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" href="@Url.Content("~/images/favicon.png")">
+
+    <style>
+        
+        /* Additional CSS rule for the details page */
+        .Appointments {
+            background-image: url("./assets/images/home.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        /* Other existing styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d3d3d3; /* Light grey background color */
+            color: #333;
+            text-align: left;
+        }
+        /* Navbar styles */
+        .navbar {
+            width: 100%;
+            background-color: black; /* Changed background color to black */
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+            .navbar a {
+                color: white;
+                text-decoration: none;
+                margin: 0 20px;
+                font-weight: bold;
+                font-size: 18px;
+            }
+        /* Service Cards Styles */
+
+        /* Change color of h4 elements to black */
+        .row h4.rannu {
+            color: white; /* Change h4 color to black */
+        }
+
+        .h4.rannu {
+            color: white;
+        }
+        /* Change color of p elements with py-3 para-light class to white */
+        .py-3.para-light {
+            color: #fff; /* Changed to white */
+        }
+
+        /* Change color of p elements with para-light class to black */
+        .para-light {
+            color: #000; /* Change para-light text color to black */
+        }
+
+        /* Other styles as needed */
+
+
+
+        /* Additional CSS for appointment management */
+        .appointment-section {
+            margin: 20px 0;
+        }
+
+            .appointment-section h3 {
+                margin-bottom: 15px;
+            }
+
+            .appointment-section input,
+            .appointment-section button {
+                margin-bottom: 10px;
+            }
+
+            .appointment-section button {
+                margin-right: 10px;
+            }
+
+        .appointment-list {
+            margin-top: 20px;
+        }
+
+            .appointment-list h4 {
+                margin-bottom: 10px;
+            }
+
+            .appointment-list ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .appointment-list li {
+                margin-bottom: 10px;
+                display: flex;
+                justify-content: space-between;
+            }
+        /* CSS to add space around the appointment button     */
+
+        /* Add margin before and after the appointment button */
+        .appointment-btn {
+            margin: 20px 10px; /* Adjust the margin values as desired */
+        }
+    </style>
+    <!-- CSS to style the appointments table -->
+    <style>
+        /* Style the appointments table */
+        .appointments-table {
+            width: 100%; /* Full width */
+            border-collapse: collapse; /* Merge adjacent cells' borders */
+        }
+
+            /* Style table headers */
+            .appointments-table thead {
+                background-color: lightgreen; /* Light grey background color */
+                font-weight: bold; /* Bold text */
+            }
+
+            /* Style table rows */
+            .appointments-table tr {
+                border-bottom: 1px solid #ddd; /* Light grey border between rows */
+            }
+
+            /* Style table cells */
+            .appointments-table td, .appointments-table th {
+                padding: 10px; /* Padding inside cells */
+                text-align: left; /* Align text to the left */
+            }
+
+            /* Add hover effect for table rows */
+            .appointments-table tr:hover {
+                background-color: #f5f5f5; /* Light grey background on hover */
+            }
+
+        /* Additional styles as needed */
+        /* Style the appointments table */
+        .appointments-table {
+            width: 100%; /* Full width */
+            border-collapse: collapse; /* Merge adjacent cells' borders */
+            border: 2px solid #333; /* Set the table border to be bolder with a solid style and a dark color */
+        }
+
+            /* Style table headers */
+            .appointments-table thead {
+                background-color: #f2f2f2; /* Light grey background color */
+                font-weight: bold; /* Bold text */
+                border: 2px solid #333; /* Set the border to be bolder with a solid style and a dark color */
+            }
+
+            /* Style table rows */
+            .appointments-table tr {
+                border-bottom: 2px solid #333; /* Bolder bottom border for each row */
+            }
+
+            /* Style table cells */
+            .appointments-table td, .appointments-table th {
+                padding: 10px; /* Padding inside cells */
+                text-align: left; /* Align text to the left */
+                border-right: 2px solid #333; /* Bolder right border for each cell */
+            }
+
+            /* Add hover effect for table rows */
+            .appointments-table tr:hover {
+                background-color: #f5f5f5; /* Light grey background on hover */
+            }
+    </style>
+
+       
+</head>
+
+<body>
+
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand logo-text" href="@Url.Action("Index", "Home")">MoonMax</a>
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="@Url.Action("Index", "Home")">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Appointments", "Home")">Appointments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Details", "Home")">Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("AboutUs", "Home")">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container mt-5" data-aos="fade-right">
+        <h1 class="headline">Appointments</h1>
+        <h2>Schedule your appointments with ease</h2>
+
+
+
+        <!-- Manage Appointments Section -->
+        <section class="appointment-section container">
+
+
+            <!-- Form for scheduling a new appointment -->
+            <div class="schedule-appointment">
+                <h5>Schedule New Appointment:</h5>
+                <input type="text" id="appointment-name" placeholder="Your Name">
+                <input type="text" id="appointment-service" placeholder="Service Type">
+                <input type="datetime-local" id="appointment-date-time">
+                <button type="button" onclick="scheduleAppointment()">Schedule Appointment</button>
+            </div>
+
+            <!-- Form for editing an existing appointment -->
+            <div class="edit-appointment mt-3">
+                <h5>Edit Appointment:</h5>
+                <input type="text" id="edit-appointment-name" placeholder="Current Appointment Name">
+                <input type="text" id="new-appointment-name" placeholder="New Name">
+                <input type="text" id="new-appointment-service" placeholder="New Service">
+                <input type="datetime-local" id="new-appointment-date-time">
+                <button type="button" onclick="editAppointment()">Edit Appointment</button>
+            </div>
+
+            <!-- Form for canceling an existing appointment -->
+            <div class="cancel-appointment mt-3">
+                <h5>Cancel Appointment:</h5>
+                <input type="text" id="cancel-appointment-name" placeholder="Appointment Name">
+                <button type="button" onclick="cancelAppointment()">Cancel Appointment</button>
+            </div>
+
+           
+            <!-- Create a table to display the appointments -->
+            <div>
+                <section>
+                    <h5>Upcoming Appointments</h5>
+                    <button onclick="displayAppointmentsInTable()">Show Appointments</button>
+                    <table id="appointments-table" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Service</th>
+                                <th>Date & Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appointments-tbody">
+                            <!-- The appointments will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+
+        </section>
+
+    </div>
+
+ 
+
+    <!-- Scripts -->
+    <script src="./js/bootstrap.min.js"></script><!-- Bootstrap framework -->
+    <script src="./js/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="./js/swiper.min.js"></script><!-- Swiper for image and text sliders -->
+    <script src="./js/aos.js"></script><!-- AOS on Animation Scroll -->
+    <script src="./js/script.js"></script>  <!-- Custom scripts -->
+    <!-- JavaScript functions for managing appointments -->
+    <!--<script>
+        const appointments = [
+            {
+                name: 'John Doe',
+                service: 'Internet Repair',
+                dateTime: '2024-04-22T15:00'
+            },
+            {
+                name: 'Jane Smith',
+                service: 'Network Upgrade',
+                dateTime: '2024-04-24T09:00'
+            }
+        ];
+
+        // Function to schedule a new appointment
+        function scheduleAppointment() {
+            const name = document.getElementById('appointment-name').value;
+            const service = document.getElementById('appointment-service').value;
+            const dateTime = document.getElementById('appointment-date-time').value;
+
+            if (name && service && dateTime) {
+                // Add the new appointment to the appointments array
+                appointments.push({
+                    name,
+                    service,
+                    dateTime
+                });
+                // Assuming appointments is an array of objects containing appointment data
+                localStorage.setItem('appointments', JSON.stringify(appointments));
+
+                // Display the updated appointments list in an alert
+                displayAppointmentsInAlert();
+
+
+                // Clear input fields after scheduling the appointment
+                document.getElementById('appointment-name').value = '';
+                document.getElementById('appointment-service').value = '';
+                document.getElementById('appointment-date-time').value = '';
+            }
+        }
+
+        // Function to edit an existing appointment
+        function editAppointment() {
+            const editName = document.getElementById('edit-appointment-name').value;
+            const newName = document.getElementById('new-appointment-name').value;
+            const newService = document.getElementById('new-appointment-service').value;
+            const newDateTime = document.getElementById('new-appointment-date-time').value;
+
+            // Find the appointment to edit
+            for (let i = 0; i < appointments.length; i++) {
+                if (appointments[i].name === editName) {
+                    if (newName) {
+                        appointments[i].name = newName;
+                    }
+                    if (newService) {
+                        appointments[i].service = newService;
+                    }
+                    if (newDateTime) {
+                        appointments[i].dateTime = newDateTime;
+                    }
+
+                    // Display the updated appointments list in an alert
+                    displayAppointmentsInAlert();
+
+                    // Clear input fields after editing the appointment
+                    document.getElementById('edit-appointment-name').value = '';
+                    document.getElementById('new-appointment-name').value = '';
+                    document.getElementById('new-appointment-service').value = '';
+                    document.getElementById('new-appointment-date-time').value = '';
+
+                    break;
+                }
+            }
+        }
+
+        // Function to cancel an appointment
+        function cancelAppointment() {
+            const nameToCancel = document.getElementById('cancel-appointment-name').value;
+
+            // Filter out the appointment to cancel
+            const updatedAppointments = appointments.filter(appointment => appointment.name !== nameToCancel);
+
+            // Update the appointments array and display the updated list in an alert
+            appointments.length = 0;
+            updatedAppointments.forEach(appointment => appointments.push(appointment));
+            displayAppointmentsInAlert();
+
+            // Clear the input field after canceling the appointment
+            document.getElementById('cancel-appointment-name').value = '';
+        }
+
+        // Function to display appointments list in an alert box
+        function displayAppointmentsInAlert() {
+            let upcomingAppointments = '';
+            appointments.forEach(appointment => {
+                upcomingAppointments += ${appointment.name} - ${appointment.service} - ${appointment.dateTime}\n;
+            });
+
+            alert(Upcoming Appointments:\n${upcomingAppointments});
+        }
+
+        // Back to top button functionality
+        const myBtn = document.getElementById("myBtn");
+
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                myBtn.style.display = "block";
+            } else {
+                myBtn.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+        // Assuming appointments is an array of objects containing appointment data
+        localStorage.setItem('appointments', JSON.stringify(appointments));-->
+
+
+
+    <script>
+        const appointments = [
+            {
+                name: 'aakesh murala',
+                service: 'Internet Repair',
+                dateTime: '2024-04-22T15:00'
+            },
+            {
+                name: 'payal samanta',
+                service: 'Network Upgrade',
+                dateTime: '2024-04-24T09:00'
+            }
+        ];
+
+        // Function to schedule a new appointment
+        function scheduleAppointment() {
+            const name = document.getElementById('appointment-name').value;
+            const service = document.getElementById('appointment-service').value;
+            const dateTime = document.getElementById('appointment-date-time').value;
+
+            if (name && service && dateTime) {
+                // Add the new appointment to the appointments array
+                appointments.push({
+                    name,
+                    service,
+                    dateTime
+                });
+                localStorage.setItem('appointments', JSON.stringify(appointments));
+
+                // Display the updated appointments list in the table
+                displayAppointmentsInTable();
+
+                // Clear input fields after scheduling the appointment
+                document.getElementById('appointment-name').value = '';
+                document.getElementById('appointment-service').value = '';
+                document.getElementById('appointment-date-time').value = '';
+            }
+        }
+
+        // Function to edit an existing appointment
+        function editAppointment() {
+            const editName = document.getElementById('edit-appointment-name').value;
+            const newName = document.getElementById('new-appointment-name').value;
+            const newService = document.getElementById('new-appointment-service').value;
+            const newDateTime = document.getElementById('new-appointment-date-time').value;
+
+            // Find the appointment to edit
+            for (let i = 0; i < appointments.length; i++) {
+                if (appointments[i].name === editName) {
+                    if (newName) {
+                        appointments[i].name = newName;
+                    }
+                    if (newService) {
+                        appointments[i].service = newService;
+                    }
+                    if (newDateTime) {
+                        appointments[i].dateTime = newDateTime;
+                    }
+
+                    // Display the updated appointments list in the table
+                    displayAppointmentsInTable();
+
+                    // Clear input fields after editing the appointment
+                    document.getElementById('edit-appointment-name').value = '';
+                    document.getElementById('new-appointment-name').value = '';
+                    document.getElementById('new-appointment-service').value = '';
+                    document.getElementById('new-appointment-date-time').value = '';
+
+                    break;
+                }
+            }
+        }
+
+        // Function to cancel an appointment
+        function cancelAppointment() {
+            const nameToCancel = document.getElementById('cancel-appointment-name').value;
+
+            // Filter out the appointment to cancel
+            const updatedAppointments = appointments.filter(appointment => appointment.name !== nameToCancel);
+
+            // Update the appointments array and display the updated list in the table
+            appointments.length = 0;
+            updatedAppointments.forEach(appointment => appointments.push(appointment));
+            displayAppointmentsInTable();
+
+            // Clear the input field after canceling the appointment
+            document.getElementById('cancel-appointment-name').value = '';
+        }
+
+        // Function to display appointments list in the table
+        function displayAppointmentsInTable() {
+            const appointmentsTableBody = document.getElementById('appointments-tbody');
+            appointmentsTableBody.innerHTML = '';
+
+            appointments.forEach(appointment => {
+                const row = document.createElement('tr');
+                const nameCell = document.createElement('td');
+                const serviceCell = document.createElement('td');
+                const dateTimeCell = document.createElement('td');
+
+                nameCell.textContent = appointment.name;
+                serviceCell.textContent = appointment.service;
+                dateTimeCell.textContent = appointment.dateTime;
+
+                row.appendChild(nameCell);
+                row.appendChild(serviceCell);
+                row.appendChild(dateTimeCell);
+
+                appointmentsTableBody.appendChild(row);
+            });
+        }
+
+        // Assuming appointments is an array of objects containing appointment data
+        localStorage.setItem('appointments', JSON.stringify(appointments));
+
+
+
+    </script>
+  
+
+    <!-- Scripts -->
+    <script src="@Url.Content("~/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/js/purecounter.min.js")"></script>
+    <script src="@Url.Content("~/js/swiper.min.js")"></script>
+    <script src="@Url.Content("~/js/aos.js")"></script>
+    <script src="@Url.Content("~/js/script.js")"></script>
+
+</body>
+
+</html>

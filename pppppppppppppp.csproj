@@ -6,4 +6,60 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\css\aos.min.css" />
+    <Content Remove="wwwroot\css\bootstrap.min.css" />
+    <Content Remove="wwwroot\css\fontawesome-all.min.css" />
+    <Content Remove="wwwroot\css\main.css" />
+    <Content Remove="wwwroot\css\style.css" />
+    <Content Remove="wwwroot\css\swiper.css" />
+    <Content Remove="wwwroot\images\about.jpg" />
+    <Content Remove="wwwroot\images\article-details-large.jpg" />
+    <Content Remove="wwwroot\images\article-details-small.jpg" />
+    <Content Remove="wwwroot\images\banner.jpeg" />
+    <Content Remove="wwwroot\images\contact.jpg" />
+    <Content Remove="wwwroot\images\favicon.png" />
+    <Content Remove="wwwroot\images\home.jpg" />
+    <Content Remove="wwwroot\images\testimonial-1.jpg" />
+    <Content Remove="wwwroot\images\testimonial-2.jpg" />
+    <Content Remove="wwwroot\images\testimonial-3.jpg" />
+    <Content Remove="wwwroot\images\testimonial-4.jpg" />
+    <Content Remove="wwwroot\images\up-arrow.png" />
+    <Content Remove="wwwroot\images\work.jpg" />
+    <Content Remove="wwwroot\js\aos.js" />
+    <Content Remove="wwwroot\js\bootstrap.min.js" />
+    <Content Remove="wwwroot\js\main.js" />
+    <Content Remove="wwwroot\js\purecounter.min.js" />
+    <Content Remove="wwwroot\js\script.js" />
+    <Content Remove="wwwroot\js\swiper.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\aos.min.css" />
+    <None Include="wwwroot\css\bootstrap.min.css" />
+    <None Include="wwwroot\css\fontawesome-all.min.css" />
+    <None Include="wwwroot\css\main.css" />
+    <None Include="wwwroot\css\style.css" />
+    <None Include="wwwroot\css\swiper.css" />
+    <None Include="wwwroot\images\about.jpg" />
+    <None Include="wwwroot\images\article-details-large.jpg" />
+    <None Include="wwwroot\images\article-details-small.jpg" />
+    <None Include="wwwroot\images\banner.jpeg" />
+    <None Include="wwwroot\images\contact.jpg" />
+    <None Include="wwwroot\images\favicon.png" />
+    <None Include="wwwroot\images\home.jpg" />
+    <None Include="wwwroot\images\testimonial-1.jpg" />
+    <None Include="wwwroot\images\testimonial-2.jpg" />
+    <None Include="wwwroot\images\testimonial-3.jpg" />
+    <None Include="wwwroot\images\testimonial-4.jpg" />
+    <None Include="wwwroot\images\up-arrow.png" />
+    <None Include="wwwroot\images\work.jpg" />
+    <None Include="wwwroot\js\aos.js" />
+    <None Include="wwwroot\js\bootstrap.min.js" />
+    <None Include="wwwroot\js\main.js" />
+    <None Include="wwwroot\js\purecounter.min.js" />
+    <None Include="wwwroot\js\script.js" />
+    <None Include="wwwroot\js\swiper.min.js" />
+  </ItemGroup>
+
 </Project>
